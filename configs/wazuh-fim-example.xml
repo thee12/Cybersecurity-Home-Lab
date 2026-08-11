@@ -1,0 +1,37 @@
+<!-- Sanitized example configuration from the home lab. -->
+<agent_config os="Windows">
+  <syscheck>
+    <disabled>no</disabled>
+    <frequency>300</frequency>
+    <scan_on_start>yes</scan_on_start>
+
+    <directories realtime="yes" report_changes="yes">C:\LabMonitored</directories>
+
+    <windows_registry arch="both" report_changes="yes">
+      HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run
+    </windows_registry>
+
+    <windows_registry arch="both" report_changes="yes">
+      HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnce
+    </windows_registry>
+  </syscheck>
+
+  <localfile>
+    <location>Microsoft-Windows-Sysmon/Operational</location>
+    <log_format>eventchannel</log_format>
+  </localfile>
+
+  <localfile>
+    <location>Microsoft-Windows-Windows Defender/Operational</location>
+    <log_format>eventchannel</log_format>
+  </localfile>
+
+  <localfile>
+    <location>Microsoft-Windows-PowerShell/Operational</location>
+    <log_format>eventchannel</log_format>
+  </localfile>
+
+  <labels>
+    <label key="endpoint.role">workstation</label>
+  </labels>
+</agent_config>
