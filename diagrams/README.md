@@ -1,6 +1,5 @@
-# Diagram Guide
-
-Create a network/architecture diagram showing the following components:
+# Diagram
+<img width="947" height="702" alt="image" src="https://github.com/user-attachments/assets/55770ae4-b0ff-4a92-8118-5f9177fb0c4e" />
 
 - Home router / management LAN (`192.168.1.0/24`)
 - Main Proxmox host
@@ -16,5 +15,3 @@ Create a network/architecture diagram showing the following components:
 - TARGET01 dual-NIC design
 - WAZUH01 as the Tailscale subnet router
 - Remote Tailscale client reaching the management subnet
-
-The diagram should emphasize that the attack subnet is isolated and is not advertised through Tailscale.
