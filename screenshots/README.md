@@ -1,31 +1,39 @@
-# Screenshot Guide
+# Lab Screenshots
 
-Add sanitized screenshots that prove the major parts of the lab without exposing secrets or personal information.
+Selected screenshots provide visual evidence of the lab's virtualization, Windows administration, Group Policy, and SIEM monitoring components.
 
-Recommended screenshots:
+## Multi-host Proxmox
 
-1. Proxmox VM inventory on the main host
-2. Proxmox VM inventory on the secondary host
-3. Active Directory OU structure
-4. Group Policy configuration
-5. Wazuh agent inventory
-6. Custom SOC dashboard
-7. Failed SSH authentication alert from TARGET01
-8. Windows or Linux FIM alert
-9. Defender/EICAR alert
-10. Kali Nmap output against TARGET01
-11. Successful Proxmox backup task
-12. Successful restore validation
-13. Tailscale subnet-route configuration with sensitive account details cropped
+### Main host
 
-## Before Uploading
+![Main Proxmox host](proxmox-main-host.webp)
 
-Remove or crop:
+Runs the Windows Server domain controller, CLIENT01, and WAZUH01.
 
-- Passwords
-- API/authentication keys
-- Tailscale auth keys
-- Personal email addresses
-- Public IP addresses if present
-- Browser tabs containing unrelated private information
-- Any credentials or tokens shown in terminals
+### Attack-lab host
+
+![Attack-lab Proxmox host](proxmox-attack-host.webp)
+
+Runs KALI01 and TARGET01 as the isolated attack/testing environment.
+
+## Active Directory
+
+![Active Directory OU structure](active-directory-ou-structure.webp)
+
+The `ad.home.arpa` domain is organized into dedicated OUs for lab users, computers, groups, and service accounts.
+
+## Group Policy
+
+![Workstation Security Baseline](gpo-workstation-security-baseline.webp)
+
+The workstation baseline demonstrates security configuration including account lockout controls and process-creation auditing.
+
+## Wazuh SOC Dashboard
+
+![Wazuh SOC dashboard](wazuh-soc-dashboard.webp)
+
+The custom dashboard summarizes alert volume, endpoint activity, high-severity alerts, and common alert types across the monitored lab.
+
+## Screenshot Safety
+
+Screenshots containing personal account information, email addresses, credentials, tokens, or other unnecessary identifying information are intentionally excluded from the public repository. Internal RFC1918 lab addresses may be shown where they help explain the architecture.
