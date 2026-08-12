@@ -105,6 +105,28 @@ Windows agents are grouped by role, including workstation and domain-controller 
 
 See [`docs/wazuh.md`](docs/wazuh.md).
 
+## Lab Evidence
+
+### Custom SOC dashboard
+
+![Wazuh SOC dashboard](screenshots/wazuh-soc-dashboard.webp)
+
+The dashboard summarizes high-severity alerts, alert volume over time, activity by endpoint, and common alert types.
+
+### Active Directory organization
+
+![Active Directory OU structure](screenshots/active-directory-ou-structure.webp)
+
+The domain is organized into purpose-built OUs for users, computers, groups, and service accounts.
+
+### Workstation security baseline
+
+![Workstation Group Policy baseline](screenshots/gpo-workstation-security-baseline.webp)
+
+The workstation GPO includes account-lockout controls and process-creation auditing.
+
+Additional virtualization screenshots are available in [`screenshots/`](screenshots/README.md).
+
 ## Controlled Detection Testing
 
 Testing was performed only against systems owned and configured for this lab.
